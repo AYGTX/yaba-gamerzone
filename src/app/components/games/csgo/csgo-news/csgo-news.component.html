@@ -1,0 +1,26 @@
+        <div class="card mt-5">
+          <div class="card-body ">
+            <h4 class="card-title">Recent News</h4>
+            <div class="d-flex align-items-top">
+              <div class="mb-0 flex-grow">
+                <div *ngFor="let o of RssData?.rss?.channel[0].item ; let i=index">
+                  <div *ngIf="i<3">
+                    <h4 class="mr-2 ">{{o.title }} </h4>
+                    <div class="d-flex align-items-center text-muted font-weight-light">
+                      <em class="mdi mdi-clock icon-sm mr-2 mb-1"></em>
+                      <span>{{o.pubDate}}</span>
+                    </div>
+                    <h5 class="mb-0 ">
+                      {{o.description }} <a href="{{o.link[0]}}"> Read more</a>
+                    </h5>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+             <!--
+
+          <a href="t" target="_blank" class="btn download-button purchase-button btn-gradient-dark ml-auto btn-primary" style="width: 100%;">Upgrade to pro to see the rest of data</a>
+             -->
+        </div>

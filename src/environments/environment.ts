@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  trnapikey:'623fb365-b551-4f81-8d69-6990483c4999',
   production: false
 };
 
