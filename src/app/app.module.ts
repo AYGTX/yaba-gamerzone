@@ -14,6 +14,7 @@ import { ChartsModule, ThemeService } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApexComponent } from './games/apex/apex.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     SpinnerComponent,
     ContentAnimateDirective,
-    
-    
+    ApexComponent,    
   ],
   imports: [
     BrowserModule,
