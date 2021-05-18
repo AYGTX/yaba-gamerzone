@@ -1,6 +1,5 @@
 import { CsgoService } from './../../../../services/games/csgo.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-csgo',
   templateUrl: './csgo.component.html',

@@ -7,6 +7,8 @@ const routes: Routes = [
 
   { path: 'games/csgo', component: CsgoComponent },
   { path: 'games/apex', component: ApexComponent },
+  { path: 'user-pages', loadChildren: () => import('./user-pages/user-pages.module').then(m => m.UserPagesModule) },
+
 
 
 ];
