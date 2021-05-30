@@ -9,6 +9,13 @@ export class ApexService {
   constructor(private http: HttpClient) {
   }
 
+  getCurrentPlayers(){
+    const body ={text : "https://steamcharts.com/app/1172470"}
+    const url ='http://localhost:5001/gamerzoneyaba/us-central1/scraper';
+    var headers = new HttpHeaders();
+    headers =  headers.set('Accept', 'application/json');
+    return this.http.post(url,body);
+  }
 
   getAccountDetails(platformUserIdentifier: string | undefined){
     var headers = new HttpHeaders();

@@ -21,13 +21,18 @@ export class CsgoNewsComponent implements OnInit {
       .subscribe(data => {
         require('timers');
         let parseString = require('xml2js').parseString;
-        parseString(data, (err:any, result: any) => {
+        parseString(data,(err: any, result: any) => {
           this.RssData = result;
         });
       });
   }
   ngOnInit(): void {
     this.GetRssFeedData();
+    var parseString = require('xml2js').parseString;
+var xml = "<root>Hello xml2js!</root>"
+parseString(xml, function (err: any, result: any) {
+    console.dir(result);
+});
   }
 
 

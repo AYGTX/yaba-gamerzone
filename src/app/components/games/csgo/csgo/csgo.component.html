@@ -14,10 +14,11 @@
       <div class="card bg-gradient-danger card-img-holder text-white">
         <div class="card-body">
           <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
-          <h4 class="font-weight-normal mb-3">Time played
+          <h4 class="font-weight-normal mb-3">Online Players
             <i class="mdi mdi-chart-line mdi-24px float-right"></i>
           </h4>
-          <h2 class="mb-5">     {{stats?.timePlayed?.displayValue}}
+          <h2 class="mb-5">    
+            {{currentPlayers && currentPlayers[0][0]}}
           </h2>
           <h6 class="card-text">Increased by 5%</h6>
 
@@ -28,10 +29,12 @@
       <div class="card bg-gradient-info card-img-holder text-white">
         <div class="card-body">
           <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                  
-          <h4 class="font-weight-normal mb-3">Subscribed Users
+          <h4 class="font-weight-normal mb-3">24 Hours Peak
             <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
           </h4>
-          <h2 class="mb-5">45,6334</h2>
+          <h2 class="mb-5">
+            {{currentPlayers && currentPlayers[0][1]}}
+          </h2>
           <h6 class="card-text">Decreased by 10%</h6>
           
         </div>
@@ -41,10 +44,12 @@
       <div class="card bg-gradient-success card-img-holder text-white">
         <div class="card-body">
           <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                                    
-          <h4 class="font-weight-normal mb-3">Players Online
+          <h4 class="font-weight-normal mb-3">All-Time peak
             <i class="mdi mdi-diamond mdi-24px float-right"></i>
           </h4>
-          <h2 class="mb-5">{{playerCount?.response.player_count}}</h2>
+          <h2 class="mb-5">
+            {{currentPlayers && currentPlayers[0][2]}}
+          </h2>
           <h6 class="card-text">Increased by 5%</h6>
         </div>
       </div>
@@ -134,20 +139,22 @@
     </div>
     <div class="col-md-6 grid-margin grid-margin-md-0 stretch-card ">
     <app-csgo-news></app-csgo-news>
-
 </div>
 <div class="col-md-6 grid-margin grid-margin-md-0 stretch-card ">
   <div class="card mt-5">
     <div class="card-body ">
-      <h4 class="card-title">Recent News</h4>
-      <div class="d-flex align-items-top">
+      <h4 class="card-title">Feeling lucky?</h4>
         <div class="mb-0 flex-grow">
-          dsqdsqd
+          <div class="card text-center">
+              <img class="card-img-top img-fluid" src="{{pick && pick.thumbnail }}" alt="Card image cap">
+              <h5 class="card-title">{{pick && pick.title }}</h5>
+              <p class="card-text">{{pick && pick.short_description }}</p>
+              <a (click)=getgames() class="btn btn-primary">Give it another shot</a>
+            <div class="card-footer text-muted">
+              Based on your preference : {{pick && pick.genre }}
+            </div>
+          </div>
       </div>
-    </div>
-   <!--
-    <a href="t" target="_blank" class="btn download-button purchase-button btn-gradient-dark ml-auto btn-primary" style="width: 100%;">Upgrade to pro to see the rest of data</a>
-  -->
   </div>
 </div>
 

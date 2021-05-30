@@ -1,3 +1,4 @@
+import { StatsComponent } from './components/games/csgo/playerStats/stats.component';
 import { ContentAnimateDirective } from './shared/directives/content-animate.directive';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -14,8 +15,8 @@ import { ChartsModule, ThemeService } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ApexComponent } from './games/apex/apex.component';
-
+import { ApexComponent } from './components/games/apex/apex.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { ApexComponent } from './games/apex/apex.component';
     SidebarComponent,
     SpinnerComponent,
     ContentAnimateDirective,
-    ApexComponent,    
+    ApexComponent,
+    StatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { ApexComponent } from './games/apex/apex.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
