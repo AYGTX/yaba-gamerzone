@@ -22,7 +22,6 @@ export class CsgoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.accountDetails('ayrtx');
     this.WeaponDetails('ayrtx');
     this.getNumberOfCurrentPlayers();
     this.mapDetails('ayrtx');
@@ -33,16 +32,7 @@ export class CsgoComponent implements OnInit {
     event.preventDefault();
     document?.querySelector('body')?.classList.toggle('removeProbanner');
   }
-  stats: any;
-  // accountDetails(accountname: string | undefined){
-  accountDetails(accountname: string | undefined) {
-    this.cs.getAccountDetails('ayrtx').subscribe((data: any) => {
-      this.accountdetails = data;
-      this.stats = this.accountdetails?.data.segments[0].stats;
 
-    }
-    );
-  }
   WeaponDetails(accountname: string | undefined) {
     this.cs.getWeaponsInformations('ayrtx').subscribe((data: any) => {
       this.weaponInformations = data;
