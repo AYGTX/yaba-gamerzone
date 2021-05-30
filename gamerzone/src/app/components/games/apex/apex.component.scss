@@ -1,7 +1,8 @@
 .news img{
-    width: 95% !important;
+    width: 96% !important;
     height: auto!important;
 }
+
 .leftCard{
     background-image: url("../../../../assets/images/left.png")
 }
@@ -11,3 +12,11 @@
 .rightCard{
     background-image: url("../../../../assets/images/right.png");
 }
+
+  header{
+    background-repeat: no-repeat;
+    background-position: center;
+    height:250px; 
+    background-image: linear-gradient(transparent, rgb(0, 0, 0)),url(".../../../../../../assets/images/csgof.jpg");
+    }
+  

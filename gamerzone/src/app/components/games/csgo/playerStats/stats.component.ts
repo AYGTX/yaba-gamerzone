@@ -1,3 +1,4 @@
+import { ApexService } from './../../../../services/apex.service';
 import { Component, OnInit } from '@angular/core';
 import { CsgoService } from 'src/app/services/csgo.service';
 
@@ -8,21 +9,30 @@ import { CsgoService } from 'src/app/services/csgo.service';
 })
 export class StatsComponent implements OnInit {
   accountdetails: any;
-  stats: any;
-
+  csgoStats: any;
+  apexStats:any;
   constructor(
     private cs: CsgoService,
+    private ap: ApexService
   ) {
     
    }
 
   ngOnInit(): void {
-    this.accountDetails('ayrtx');
+    this.getCsgoStats('ayrtx');
+    this.getApexStats('Daltoosh')
   }
-  accountDetails(_accountname: string | undefined) {
+  getCsgoStats(_accountname: string | undefined) {
     this.cs.getAccountDetails('ayrtx').subscribe((data: any) => {
       this.accountdetails = data;
-      this.stats = this.accountdetails?.data.segments[0].stats;
+      this.csgoStats = this.accountdetails?.data.segments[0].stats;
+    }
+    );
+  }
+  getApexStats(_accountname: string | undefined) {
+    this.ap.getAccountDetails('Daltoosh').subscribe((data: any) => {
+      this.accountdetails = data;
+      this.apexStats = this.accountdetails?.data.segments[0].stats;
     }
     );
   }
